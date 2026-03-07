@@ -1,0 +1,43 @@
+{
+  "id": "agent-safety",
+  "name": "Agent Safety",
+  "description": "Stakeholder-aware safety system for LLM agents — validates tool calls against trust levels, permissions, and 8 risk dimensions (arXiv:2602.20021).",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "mode": {
+        "type": "string",
+        "enum": ["local", "api", "both"]
+      },
+      "apiKey": {
+        "type": "string"
+      },
+      "model": {
+        "type": "string"
+      },
+      "blockHighRiskUnverified": {
+        "type": "boolean"
+      }
+    }
+  },
+  "uiHints": {
+    "mode": {
+      "label": "Validation Mode",
+      "help": "local = fast heuristic checks only, api = Claude-powered deep analysis, both = local first then API fallback."
+    },
+    "apiKey": {
+      "label": "Anthropic API Key",
+      "sensitive": true,
+      "help": "Falls back to ANTHROPIC_API_KEY env var if not set."
+    },
+    "model": {
+      "label": "Validation Model",
+      "help": "Claude model for API validation (default: claude-sonnet-4-20250514)."
+    },
+    "blockHighRiskUnverified": {
+      "label": "Block High-Risk Unverified",
+      "help": "Immediately block high-risk actions from unverified requesters."
+    }
+  }
+}
