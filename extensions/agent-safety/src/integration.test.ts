@@ -113,7 +113,8 @@ describe("Integration: full hook pipeline", () => {
     expect(simulateHook(store, auditLog, "bash", { command: "ls" }, "unknown_uid").block).toBe(
       true,
     );
-    expect(simulateHook(store, auditLog, "modify_memory", { content: "hi" }).block).toBe(true);
+    // No sender context → defaults to owner (local user), should be allowed
+    expect(simulateHook(store, auditLog, "modify_memory", { content: "hi" }).block).toBe(false);
   });
 
   // Audit logging

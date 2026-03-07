@@ -80,6 +80,11 @@ export class StakeholderStore {
       if (match) return match;
     }
 
+    // No sender context at all → local user, treat as owner
+    if (senderId === undefined && isOwner === undefined) {
+      return this.getOwner() ?? DEFAULT_STAKEHOLDERS[0];
+    }
+
     // Return untrusted default for unknown senders
     return {
       id: "unknown",
