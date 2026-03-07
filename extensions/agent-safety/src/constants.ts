@@ -117,6 +117,7 @@ export function toolNameToCategory(toolName: string): ActionCategory {
     reply: "send_message",
     read_message: "read_message",
     forward: "forward_message",
+    agent_communication: "agent_communication",
     // Memory
     memory_store: "modify_memory",
     memory_recall: "read_files",
