@@ -1,0 +1,14 @@
+{
+  "name": "@openclaw/agent-safety",
+  "version": "2026.3.7",
+  "description": "Agent safety system: stakeholder model, action validator, and safety dashboard — based on arXiv:2602.20021",
+  "type": "module",
+  "dependencies": {
+    "@sinclair/typebox": "0.34.48"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
