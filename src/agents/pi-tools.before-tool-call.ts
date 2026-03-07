@@ -13,6 +13,10 @@ export type HookContext = {
   sessionId?: string;
   runId?: string;
   loopDetection?: ToolLoopDetectionConfig;
+  /** Trusted sender id from inbound context. */
+  senderId?: string;
+  /** Whether the sender is the owner. */
+  senderIsOwner?: boolean;
 };
 
 type HookOutcome = { blocked: true; reason: string } | { blocked: false; params: unknown };
@@ -161,6 +165,8 @@ export async function runBeforeToolCallHook(args: {
       ...(args.ctx?.sessionId ? { sessionId: args.ctx.sessionId } : {}),
       ...(args.ctx?.runId ? { runId: args.ctx.runId } : {}),
       ...(args.toolCallId ? { toolCallId: args.toolCallId } : {}),
+      ...(args.ctx?.senderId ? { requesterSenderId: args.ctx.senderId } : {}),
+      ...(args.ctx?.senderIsOwner != null ? { senderIsOwner: args.ctx.senderIsOwner } : {}),
     };
     const hookResult = await hookRunner.runBeforeToolCall(
       {
