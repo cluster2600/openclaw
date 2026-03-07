@@ -44,6 +44,7 @@ Looking for third-party listings? See [Community plugins](/plugins/community).
 - Microsoft Teams is plugin-only as of 2026.1.15; install `@openclaw/msteams` if you use Teams.
 - Memory (Core) — bundled memory search plugin (enabled by default via `plugins.slots.memory`)
 - Memory (LanceDB) — bundled long-term memory plugin (auto-recall/capture; set `plugins.slots.memory = "memory-lancedb"`)
+- [Agent Safety](/extensions/agent-safety) — `@openclaw/agent-safety`
 - [Voice Call](/plugins/voice-call) — `@openclaw/voice-call`
 - [Zalo Personal](/plugins/zalouser) — `@openclaw/zalouser`
 - [Matrix](/channels/matrix) — `@openclaw/matrix`
@@ -153,7 +154,8 @@ authoring plugins:
 - `openclaw/plugin-sdk/line` for LINE channel plugins.
 - `openclaw/plugin-sdk/msteams` for the bundled Microsoft Teams plugin surface.
 - Bundled extension-specific subpaths are also available:
-  `openclaw/plugin-sdk/acpx`, `openclaw/plugin-sdk/bluebubbles`,
+  `openclaw/plugin-sdk/acpx`, `openclaw/plugin-sdk/agent-safety`,
+  `openclaw/plugin-sdk/bluebubbles`,
   `openclaw/plugin-sdk/copilot-proxy`, `openclaw/plugin-sdk/device-pair`,
   `openclaw/plugin-sdk/diagnostics-otel`, `openclaw/plugin-sdk/diffs`,
   `openclaw/plugin-sdk/feishu`,

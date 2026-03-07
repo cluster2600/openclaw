@@ -104,6 +104,7 @@ Process to derive the list:
 
 Current npm plugin list (update as needed):
 
+- @openclaw/agent-safety
 - @openclaw/bluebubbles
 - @openclaw/diagnostics-otel
 - @openclaw/discord
